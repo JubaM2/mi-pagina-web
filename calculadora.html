@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Java</title>
+</head>
+<body>
+    <script>
+        // Función principal de la calculadora
+function calculadora() {
+  let continuar = true;
+
+  // Bucle while para mantener la calculadora en funcionamiento
+  while (continuar) {
+    // Solicitar al usuario la operación que desea realizar
+    let operacion = prompt("Selecciona una operación:\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Salir");
+    
+    // Comprobamos si el usuario eligió salir
+    if (operacion === '5') {
+      continuar = false; // Termina el bucle
+      alert("¡Gracias por usar la calculadora!");
+      break; // Sale del bucle while
+    }
+
+    // Solicitar los números para la operación
+    let num1 = parseFloat(prompt("Ingresa el primer número:"));
+    let num2 = parseFloat(prompt("Ingresa el segundo número:"));
+    
+    // Variable para almacenar el resultado
+    let resultado;
+
+    // Evaluar la operación seleccionada con 'else if'
+    if (operacion === '1') {
+      resultado = num1 + num2; // Suma
+      alert("El resultado de la suma es: " + resultado);
+    } else if (operacion === '2') {
+      resultado = num1 - num2; // Resta
+      alert("El resultado de la resta es: " + resultado);
+    } else if (operacion === '3') {
+      resultado = num1 * num2; // Multiplicación
+      alert("El resultado de la multiplicación es: " + resultado);
+    } else if (operacion === '4') {
+      if (num2 !== 0) {
+        resultado = num1 / num2; // División
+        alert("El resultado de la división es: " + resultado);
+      } else {
+        alert("No se puede dividir entre cero.");
+      }
+    } else {
+      alert("Opción no válida. Inténtalo de nuevo.");
+    }
+  }
+}
+
+// Llamamos a la función para iniciar la calculadora
+calculadora();
+
+    </script>
+</body>
+</html>
